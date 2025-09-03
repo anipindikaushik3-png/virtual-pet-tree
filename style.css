@@ -29,6 +29,7 @@ h1 {
   background: #f1faee;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(60,80,80,0.08);
+  overflow: hidden;
 }
 
 #tree-svg {
@@ -74,6 +75,94 @@ h1 {
   justify-content: space-between;
   gap: 8px;
   flex-wrap: wrap;
+}
+
+/* Animations */
+
+.leaf {
+  transform-origin: center;
+  animation: sway 2.2s infinite ease-in-out;
+}
+.leaf:nth-child(odd) {
+  animation-delay: 0.5s;
+}
+.leaf:nth-child(even) {
+  animation-delay: 1s;
+}
+@keyframes sway {
+  0% { transform: rotate(-7deg);}
+  50% { transform: rotate(7deg);}
+  100% { transform: rotate(-7deg);}
+}
+
+.branch {
+  opacity: 0;
+  animation: branchGrow 0.7s forwards;
+}
+@keyframes branchGrow {
+  to { opacity: 1; }
+}
+
+.trunk {
+  opacity: 0;
+  animation: trunkGrow 1s forwards;
+}
+@keyframes trunkGrow {
+  to { opacity: 1; }
+}
+
+.decoration-animate {
+  animation: decoPop 0.6s;
+}
+@keyframes decoPop {
+  0% { transform: scale(0.2) rotate(-30deg);}
+  70% { transform: scale(1.3) rotate(12deg);}
+  100% { transform: scale(1) rotate(0deg);}
+}
+
+#water-drop {
+  position: absolute;
+  left: 145px;
+  top: 60px;
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+  display: none;
+  z-index: 5;
+}
+.water-drop-animate {
+  display: block;
+  animation: dropWater 1.2s;
+}
+@keyframes dropWater {
+  0% { top: 60px; opacity: 0;}
+  15% { opacity: 1;}
+  80% { top: 320px; opacity: 1;}
+  100% { top: 330px; opacity: 0;}
+}
+#water-drop svg {
+  width: 100%;
+  height: 100%;
+}
+
+#sparkle {
+  position: absolute;
+  left: 130px;
+  top: 100px;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+  display: none;
+  z-index: 5;
+}
+.sparkle-animate {
+  display: block;
+  animation: sparkleGrow 1.1s;
+}
+@keyframes sparkleGrow {
+  0% { opacity: 0; transform: scale(0.2);}
+  30% { opacity: 1; transform: scale(1.6);}
+  100% { opacity: 0; transform: scale(0.5);}
 }
 
 @media screen and (max-width: 500px) {
