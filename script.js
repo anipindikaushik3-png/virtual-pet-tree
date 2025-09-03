@@ -1,12 +1,12 @@
-// Super Cute Animated Pet Tree!
+// MAXIMUM CUTE Virtual Pet Tree
 
 const TREE_STRUCTURE = [
   {
     name: "Seed",
-    trunk: 50,
+    trunk: 45,
     branches: [],
     leaves: [],
-    color: "#d1a06a"
+    color: "#F9D29D"
   },
   {
     name: "Sprout",
@@ -15,9 +15,9 @@ const TREE_STRUCTURE = [
       { x1: 200, y1: 450, x2: 170, y2: 370, c1x: 190, c1y: 430, c2x: 175, c2y: 400 }
     ],
     leaves: [
-      { x: 170, y: 355, angle: -25, size: 1.1, color: "#B4F8C8" }
+      { x: 170, y: 355, angle: -25, size: 1.2, color: "#FFDFE7" }
     ],
-    color: "#eab676"
+    color: "#F7B787"
   },
   {
     name: "Sapling",
@@ -27,11 +27,11 @@ const TREE_STRUCTURE = [
       { x1: 200, y1: 450, x2: 230, y2: 340, c1x: 210, c1y: 410, c2x: 225, c2y: 370 }
     ],
     leaves: [
-      { x: 170, y: 355, angle: -25, size: 1.1, color: "#B4F8C8" },
-      { x: 230, y: 335, angle: 35, size: 1, color: "#FFAEBC" },
-      { x: 200, y: 320, angle: 0, size: 0.9, color: "#A0E7E5" }
+      { x: 170, y: 355, angle: -25, size: 1.2, color: "#FFDFE7" },
+      { x: 230, y: 335, angle: 35, size: 1.1, color: "#B8F3FF" },
+      { x: 200, y: 320, angle: 0, size: 1, color: "#FFE6CA" }
     ],
-    color: "#eab676"
+    color: "#F7B787"
   },
   {
     name: "Young Tree",
@@ -42,13 +42,13 @@ const TREE_STRUCTURE = [
       { x1: 200, y1: 410, x2: 150, y2: 300, c1x: 180, c1y: 380, c2x: 155, c2y: 340 }
     ],
     leaves: [
-      { x: 170, y: 355, angle: -25, size: 1.2, color: "#B4F8C8" },
-      { x: 230, y: 335, angle: 35, size: 1.1, color: "#FFAEBC" },
-      { x: 200, y: 320, angle: 0, size: 1, color: "#A0E7E5" },
-      { x: 150, y: 295, angle: -40, size: 1.2, color: "#FBE7C6" },
-      { x: 210, y: 290, angle: 10, size: 1, color: "#B4F8C8" }
+      { x: 170, y: 355, angle: -25, size: 1.2, color: "#FFDFE7" },
+      { x: 230, y: 335, angle: 35, size: 1.1, color: "#B8F3FF" },
+      { x: 200, y: 320, angle: 0, size: 1, color: "#FFE6CA" },
+      { x: 150, y: 295, angle: -40, size: 1.2, color: "#D6FFDE" },
+      { x: 210, y: 290, angle: 10, size: 1.1, color: "#E1DFFF" }
     ],
-    color: "#eab676"
+    color: "#F7B787"
   },
   {
     name: "Full Tree",
@@ -60,27 +60,31 @@ const TREE_STRUCTURE = [
       { x1: 200, y1: 410, x2: 250, y2: 290, c1x: 220, c1y: 370, c2x: 245, c2y: 340 }
     ],
     leaves: [
-      { x: 170, y: 355, angle: -25, size: 1.2, color: "#B4F8C8" },
-      { x: 230, y: 335, angle: 35, size: 1.1, color: "#FFAEBC" },
-      { x: 200, y: 320, angle: 0, size: 1, color: "#A0E7E5" },
-      { x: 150, y: 295, angle: -40, size: 1.1, color: "#FBE7C6" },
-      { x: 210, y: 290, angle: 10, size: 1.2, color: "#B4F8C8" },
-      { x: 250, y: 285, angle: 42, size: 1.1, color: "#FFAEBC" },
-      { x: 180, y: 260, angle: -18, size: 1, color: "#A0E7E5" },
-      { x: 220, y: 250, angle: 15, size: 1.05, color: "#FBE7C6" }
+      { x: 170, y: 355, angle: -25, size: 1.3, color: "#FFDFE7" },
+      { x: 230, y: 335, angle: 35, size: 1.2, color: "#B8F3FF" },
+      { x: 200, y: 320, angle: 0, size: 1.1, color: "#FFE6CA" },
+      { x: 150, y: 295, angle: -40, size: 1.3, color: "#D6FFDE" },
+      { x: 210, y: 290, angle: 10, size: 1.2, color: "#E1DFFF" },
+      { x: 250, y: 285, angle: 42, size: 1.2, color: "#F7CAF7" },
+      { x: 180, y: 260, angle: -18, size: 1.1, color: "#B8F3FF" },
+      { x: 220, y: 250, angle: 15, size: 1.1, color: "#FFF1B5" }
     ],
-    color: "#eab676"
+    color: "#F7B787"
   }
 ];
 
 const FACE = {
   eyes: [
-    { x: 197, y: 450, r: 4 },
-    { x: 207, y: 450, r: 4 }
+    { x: 194, y: 450, r: 7, blink: false },
+    { x: 208, y: 450, r: 7, blink: false }
   ],
   smile: {
-    cx: 202, cy: 457, rx: 8, ry: 4
-  }
+    cx: 201, cy: 460, rx: 14, ry: 7
+  },
+  blush: [
+    { cx: 187, cy: 460, rx: 6, ry: 2.2 },
+    { cx: 215, cy: 460, rx: 6, ry: 2.2 }
+  ]
 };
 
 let treeState = {
@@ -88,12 +92,14 @@ let treeState = {
   health: 10,
   decorations: [],
   lastAction: "",
-  bounce: false
+  bounce: false,
+  blink: false,
+  faceMood: "smile" // "smile" "wink" "sad"
 };
 
 function drawTreeAnimated() {
   const svg = document.getElementById("tree-svg");
-  svg.innerHTML = "";
+  svg.innerHTML = drawBackground();
   let stage = TREE_STRUCTURE[treeState.stage];
 
   // Animate trunk
@@ -105,9 +111,11 @@ function drawTreeAnimated() {
   function animateTrunk() {
     trunkProgress += 10;
     if (trunkProgress > trunkTarget) trunkProgress = trunkTarget;
-    let trunkY = 450 - trunkProgress + (bounce ? Math.sin(trunkProgress/30)*8 : 0);
-    svg.innerHTML = `
-      <rect x="186" y="${trunkY}" width="28" height="${trunkProgress}" rx="16" fill="${stage.color}" stroke="#a98467" stroke-width="2"/>
+    let trunkY = 450 - trunkProgress + (bounce ? Math.sin(trunkProgress/30)*16 : 0);
+
+    svg.innerHTML = drawBackground() + `
+      <ellipse cx="200" cy="${trunkY + trunkProgress/2}" rx="32" ry="${trunkProgress/2}" fill="${stage.color}" />
+      <rect x="180" y="${trunkY}" width="40" height="${trunkProgress}" rx="20" fill="${stage.color}" />
       ${drawFace(trunkY + trunkProgress)}
     `;
     if (trunkProgress < trunkTarget) {
@@ -136,19 +144,22 @@ function drawTreeAnimated() {
       animateLeaves();
       return;
     }
-    svg.innerHTML = `
-      <rect x="186" y="${450-stage.trunk}" width="28" height="${stage.trunk}" rx="16" fill="${stage.color}" stroke="#a98467" stroke-width="2"/>
+    svg.innerHTML = drawBackground() + `
+      <ellipse cx="200" cy="${450-stage.trunk/2}" rx="32" ry="${stage.trunk/2}" fill="${stage.color}" />
+      <rect x="180" y="${450-stage.trunk}" width="40" height="${stage.trunk}" rx="20" fill="${stage.color}" />
       ${drawFace(450)}
     `;
     for (let i = 0; i < branchIdx; ++i) {
       let b = stage.branches[i];
-      svg.innerHTML += `<path d="M${b.x1},${b.y1} C${b.c1x},${b.c1y} ${b.c2x},${b.c2y} ${b.x2},${b.y2}" stroke="#a98467" stroke-width="7" fill="none" stroke-linecap="round"/>`;
+      svg.innerHTML += `<path d="M${b.x1},${b.y1} C${b.c1x},${b.c1y} ${b.c2x},${b.c2y} ${b.x2},${b.y2}"
+        stroke="#F9D29D" stroke-width="11" fill="none" stroke-linecap="round"/>`;
     }
     if (branchIdx < stage.branches.length) {
       let b = stage.branches[branchIdx];
       branchPct += 0.09;
       if (branchPct > 1) branchPct = 1;
-      svg.innerHTML += `<path d="${bezierPath(b, branchPct)}" stroke="#a98467" stroke-width="7" fill="none" stroke-linecap="round"/>`;
+      svg.innerHTML += `<path d="${bezierPath(b, branchPct)}"
+        stroke="#F9D29D" stroke-width="11" fill="none" stroke-linecap="round"/>`;
       if (branchPct < 1) {
         requestAnimationFrame(animateBranches);
       } else {
@@ -163,12 +174,14 @@ function drawTreeAnimated() {
 
   let leafIdx = 0;
   function animateLeaves() {
-    svg.innerHTML = `
-      <rect x="186" y="${450-stage.trunk}" width="28" height="${stage.trunk}" rx="16" fill="${stage.color}" stroke="#a98467" stroke-width="2"/>
+    svg.innerHTML = drawBackground() + `
+      <ellipse cx="200" cy="${450-stage.trunk/2}" rx="32" ry="${stage.trunk/2}" fill="${stage.color}" />
+      <rect x="180" y="${450-stage.trunk}" width="40" height="${stage.trunk}" rx="20" fill="${stage.color}" />
       ${drawFace(450)}
     `;
     for (let b of stage.branches) {
-      svg.innerHTML += `<path d="M${b.x1},${b.y1} C${b.c1x},${b.c1y} ${b.c2x},${b.c2y} ${b.x2},${b.y2}" stroke="#a98467" stroke-width="7" fill="none" stroke-linecap="round"/>`;
+      svg.innerHTML += `<path d="M${b.x1},${b.y1} C${b.c1x},${b.c1y} ${b.c2x},${b.c2y} ${b.x2},${b.y2}"
+        stroke="#F9D29D" stroke-width="11" fill="none" stroke-linecap="round"/>`;
     }
     for (let i = 0; i < leafIdx; ++i) {
       let l = stage.leaves[i];
@@ -178,14 +191,16 @@ function drawTreeAnimated() {
       let l = stage.leaves[leafIdx];
       let scale = 0;
       function popLeaf() {
-        scale += 0.14;
+        scale += 0.13;
         if (scale > 1) scale = 1;
-        svg.innerHTML = `
-          <rect x="186" y="${450-stage.trunk}" width="28" height="${stage.trunk}" rx="16" fill="${stage.color}" stroke="#a98467" stroke-width="2"/>
+        svg.innerHTML = drawBackground() + `
+          <ellipse cx="200" cy="${450-stage.trunk/2}" rx="32" ry="${stage.trunk/2}" fill="${stage.color}" />
+          <rect x="180" y="${450-stage.trunk}" width="40" height="${stage.trunk}" rx="20" fill="${stage.color}" />
           ${drawFace(450)}
         `;
         for (let b of stage.branches) {
-          svg.innerHTML += `<path d="M${b.x1},${b.y1} C${b.c1x},${b.c1y} ${b.c2x},${b.c2y} ${b.x2},${b.y2}" stroke="#a98467" stroke-width="7" fill="none" stroke-linecap="round"/>`;
+          svg.innerHTML += `<path d="M${b.x1},${b.y1} C${b.c1x},${b.c1y} ${b.c2x},${b.c2y} ${b.x2},${b.y2}"
+            stroke="#F9D29D" stroke-width="11" fill="none" stroke-linecap="round"/>`;
         }
         for (let i = 0; i < leafIdx; ++i) {
           let ll = stage.leaves[i];
@@ -206,31 +221,61 @@ function drawTreeAnimated() {
   }
 
   function drawFace(baseY) {
-    // Draws a little smiley face on the trunk as tree grows
-    if (treeState.stage === 0) return "";
-    let {eyes, smile} = FACE;
-    return `
-      <circle cx="${eyes[0].x}" cy="${baseY-10}" r="${eyes[0].r}" fill="#444"/>
-      <circle cx="${eyes[1].x}" cy="${baseY-10}" r="${eyes[1].r}" fill="#444"/>
-      <ellipse cx="${smile.cx}" cy="${baseY-2}" rx="${smile.rx}" ry="${smile.ry}" fill="none" stroke="#444" stroke-width="2" />
+    // Changes with treeState.faceMood
+    let cheekColor = "#FFB6B6";
+    let {eyes, smile, blush} = FACE;
+    let mood = treeState.faceMood;
+    let wink = treeState.blink;
+    let leftEye = wink ? `<ellipse cx="${eyes[0].x}" cy="${baseY-18}" rx="7" ry="2" fill="#444"/>`
+                       : `<circle cx="${eyes[0].x}" cy="${baseY-18}" r="${eyes[0].r}" fill="#444"/>`;
+    let rightEye = `<circle cx="${eyes[1].x}" cy="${baseY-18}" r="${eyes[1].r}" fill="#444"/>`;
+    let cheeks = `
+      <ellipse cx="${blush[0].cx}" cy="${baseY-6}" rx="${blush[0].rx}" ry="${blush[0].ry}" fill="${cheekColor}" opacity="0.6"/>
+      <ellipse cx="${blush[1].cx}" cy="${baseY-6}" rx="${blush[1].rx}" ry="${blush[1].ry}" fill="${cheekColor}" opacity="0.6"/>
     `;
+    let mouth = mood === "sad"
+      ? `<ellipse cx="${smile.cx}" cy="${baseY-3}" rx="${smile.rx}" ry="4" fill="none" stroke="#444" stroke-width="3" transform="rotate(180,${smile.cx},${baseY-3})"/>`
+      : `<ellipse cx="${smile.cx}" cy="${baseY+10}" rx="${smile.rx}" ry="7" fill="none" stroke="#444" stroke-width="3"/>`;
+    return leftEye + rightEye + cheeks + mouth;
   }
 
   function drawCuteLeaf(x, y, angle, size, color, scale, idx) {
-    // Cute leaf: rounded, pastel, sometimes sparkly
-    const shine = idx % 2 === 0;
+    // Leaf: rounded, pastel, with sparkle or heart sometimes
+    const sparkle = (idx % 3 === 0 && scale === 1)
+      ? `<circle cx="${x}" cy="${y-15*size}" r="2.5" fill="#fff" opacity="0.7"/><circle cx="${x+3}" cy="${y-17*size}" r="1.1" fill="#fff" opacity="0.4"/>`
+      : "";
+    const heart = (idx % 4 === 1 && scale === 1)
+      ? `<path d="M ${x-3} ${y-15*size}
+         Q ${x} ${y-21*size}, ${x+3} ${y-15*size}
+         Q ${x+8} ${y-7*size}, ${x} ${y-4*size}
+         Q ${x-8} ${y-7*size}, ${x-3} ${y-15*size} Z"
+         fill="#FFB6B6" opacity="0.6"/>` : "";
     let path =
       `M ${x} ${y}
-      Q ${x-8*size*scale} ${y-9*size*scale}, ${x} ${y-26*size*scale}
-      Q ${x+8*size*scale} ${y-9*size*scale}, ${x} ${y}
+      Q ${x-9*size*scale} ${y-11*size*scale}, ${x} ${y-32*size*scale}
+      Q ${x+9*size*scale} ${y-11*size*scale}, ${x} ${y}
       Z`;
-    let sparkle = shine && scale === 1
-      ? `<circle cx="${x}" cy="${y-15*size}" r="2.2" fill="#fff" opacity="0.6"/>`
-      : "";
     return `<g transform="rotate(${angle},${x},${y})">
-      <path class="leaf" d="${path}" fill="${color}" stroke="#aadbb0" stroke-width="2"/>
-      ${sparkle}
+      <path class="leaf" d="${path}" fill="${color}" stroke="#fff" stroke-width="2"/>
+      ${sparkle}${heart}
     </g>`;
+  }
+
+  function drawBackground() {
+    // Pastel sky, clouds, grass
+    return `
+      <rect x="0" y="0" width="400" height="500" fill="url(#skyGradient)"/>
+      <defs>
+        <linearGradient id="skyGradient" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FFF1FB"/>
+          <stop offset="90%" stop-color="#B6F4F4"/>
+        </linearGradient>
+      </defs>
+      <ellipse cx="200" cy="490" rx="140" ry="30" fill="#B4F8C8" opacity="0.7"/>
+      <ellipse cx="80" cy="80" rx="30" ry="12" fill="#fff" opacity="0.7"/>
+      <ellipse cx="320" cy="60" rx="27" ry="14" fill="#fff" opacity="0.55"/>
+      <ellipse cx="140" cy="60" rx="18" ry="7" fill="#fff" opacity="0.5"/>
+    `;
   }
 
   animateTrunk();
@@ -238,6 +283,14 @@ function drawTreeAnimated() {
 
 
 function updateStatus() {
+  let mood = "smile";
+  if (treeState.health <= 3) mood = "sad";
+  if (treeState.health <= 7 && Math.random() < 0.2) {
+    treeState.blink = true;
+    setTimeout(() => { treeState.blink = false; update(); }, 800);
+    mood = "wink";
+  }
+  treeState.faceMood = mood;
   document.getElementById("growth-status").textContent =
     `Growth: ${TREE_STRUCTURE[treeState.stage].name}`;
   document.getElementById("health-status").textContent =
@@ -278,7 +331,7 @@ function progressTree(fertilize=false) {
     if (Math.random() < chance && treeState.stage < TREE_STRUCTURE.length-1) {
       treeState.stage++;
       treeState.bounce = true;
-      treeState.lastAction += " 🌱 It bounced and grew!";
+      treeState.lastAction += " 🌱 The tree bounced and grew!";
     }
   }
 }
@@ -294,7 +347,9 @@ function addDecoration() {
     {emoji: "✨", x: 160, y: 270},
     {emoji: "🎀", x: 245, y: 250},
     {emoji: "💎", x: 170, y: 220},
-    {emoji: "⭐", x: 210, y: 195}
+    {emoji: "⭐", x: 210, y: 195},
+    {emoji: "🌈", x: 185, y: 190},
+    {emoji: "🧸", x: 200, y: 230}
   ];
   const deco = {...decoTypes[Math.floor(Math.random()*decoTypes.length)], animate:true};
   treeState.decorations.push(deco);
@@ -312,11 +367,15 @@ function drawDecorations() {
     elem.style.position = "absolute";
     elem.style.left = deco.x + "px";
     elem.style.top = deco.y + "px";
-    elem.style.fontSize = "2.2rem";
+    elem.style.fontSize = "2.5rem";
     elem.style.pointerEvents = "none";
+    elem.style.transition = "transform 0.6s cubic-bezier(.34,1.56,.64,1)";
     if (deco.animate) {
-      elem.classList.add("decoration-animate");
-      setTimeout(() => { elem.classList.remove("decoration-animate"); deco.animate = false; }, 700);
+      elem.style.transform = "translateY(-50px) scale(0.4)";
+      setTimeout(() => {
+        elem.style.transform = "translateY(0px) scale(1)";
+        setTimeout(() => { deco.animate = false; }, 700);
+      }, 80);
     }
     overlay.appendChild(elem);
   });
@@ -328,7 +387,9 @@ function resetTree() {
     health: 10,
     decorations: [],
     lastAction: "Tree was reset.",
-    bounce: false
+    bounce: false,
+    blink: false,
+    faceMood: "smile"
   };
   update();
 }
@@ -362,6 +423,7 @@ function animateDecoration(idx) {
 
 function update() {
   drawTreeAnimated();
+  drawDecorations();
   updateStatus();
   saveTree();
 }
