@@ -82,7 +82,6 @@ let treeState = {
   lastAction: "",
 };
 
-// Animate tree drawing
 function drawTreeAnimated() {
   const svg = document.getElementById("tree-svg");
   svg.innerHTML = "";
