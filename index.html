@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Virtual Pet Tree 🌳</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Virtual Pet Tree 🌳</h1>
+    <div class="tree-area">
+      <svg id="tree-svg" viewBox="0 0 300 400"></svg>
+      <div class="decorations" id="decorations"></div>
+    </div>
+    <div class="controls">
+      <button onclick="waterTree()">💧 Water</button>
+      <button onclick="fertilizeTree()">🌱 Fertilize</button>
+      <button onclick="addDecoration()">🎀 Decorate</button>
+      <button onclick="resetTree()">🔄 Reset</button>
+    </div>
+    <div class="status">
+      <span id="growth-status">Growth: Seed</span>
+      <span id="health-status">Health: 😊</span>
+      <span id="last-action"></span>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
