@@ -2,18 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Animated Virtual Pet Tree 🌳</title>
+  <title>Beautiful Animated Pet Tree 🌱</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Animated Virtual Pet Tree 🌳</h1>
+    <h1>Animated Pet Tree 🌱</h1>
     <div class="tree-area">
-      <svg id="tree-svg" viewBox="0 0 300 400"></svg>
-      <div class="decorations" id="decorations"></div>
-      <div id="water-drop"></div>
-      <div id="sparkle"></div>
+      <svg id="tree-svg" viewBox="0 0 400 500"></svg>
+      <div id="ui-overlay"></div>
     </div>
     <div class="controls">
       <button onclick="waterTree()">💧 Water</button>
@@ -22,8 +20,8 @@
       <button onclick="resetTree()">🔄 Reset</button>
     </div>
     <div class="status">
-      <span id="growth-status">Growth: Seed</span>
-      <span id="health-status">Health: 😊</span>
+      <span id="growth-status"></span>
+      <span id="health-status"></span>
       <span id="last-action"></span>
     </div>
   </div>
